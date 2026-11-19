@@ -6,242 +6,237 @@
 <title>HoReCa Systems — by Yuliana Yaroshevich</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --cream:#f3efe6;
-    --cream-2:#ebe6db;
-    --dark:#1a2a22;
-    --dark-2:#22352c;
-    --lime:#c8f04a;
-    --terra:#c86b55;
-    --blue:#3a6b8c;
-    --blue-2:#2f5a77;
-    --border:#1a2a22;
-    --shadow:6px 6px 0 var(--dark);
-    --shadow-sm:4px 4px 0 var(--dark);
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
-    font-family:'Space Grotesk',sans-serif;
-    background:var(--cream);
-    color:var(--dark);
-    line-height:1.55;
-    background-image:
-      linear-gradient(rgba(0,0,0,.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0,0,0,.04) 1px, transparent 1px);
-    background-size:40px 40px;
-  }
-  .mono{font-family:'JetBrains Mono',monospace}
-  a{color:inherit;text-decoration:none}
-  img{max-width:100%;display:block}
-  .container{max-width:1200px;margin:0 auto;padding:0 32px}
+:root{
+  --cream:#efece2;
+  --paper:#fbfaf5;
+  --card-cream:#f1ebdb;
+  --ink:#1f1f1f;
+  --dark:#182a20;
+  --lime:#c9f24b;
+  --teal:#2e6b74;
+  --terra:#c0512f;
+  --red:#c0392b;
+  --salmon:#e08561;
+  --blue:#4a7fa5;
+  --steel:#7f9cb4;
+  --steel-line:#52708a;
+  --teal-text:#2b7a8f;
+  --muted-dark:#9db0a3;
+  --muted-light:#5a5a52;
+  --mono:'JetBrains Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Space Grotesk',sans-serif;
+  background-color:var(--cream);
+  color:var(--ink);
+  line-height:1.55;
+  background-image:
+    linear-gradient(rgba(22,36,29,.06) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(22,36,29,.06) 1px,transparent 1px);
+  background-size:44px 44px;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.container{max-width:1120px;margin:0 auto;padding:0 24px}
 
-  /* NAV */
-  header{
-    position:sticky;top:0;z-index:50;
-    background:rgba(243,239,230,.95);
-    backdrop-filter:blur(8px);
-    border-bottom:1px solid rgba(0,0,0,.08);
-  }
-  .nav{
-    display:flex;align-items:center;justify-content:space-between;
-    padding:18px 0;
-  }
-  .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;letter-spacing:.3px}
-  .logo-sq{width:14px;height:14px;background:var(--lime);border:2px solid var(--dark)}
-  .logo-sub{font-size:11px;color:var(--blue);font-weight:500;letter-spacing:1.5px;text-transform:uppercase;margin-top:2px}
-  .nav-links{display:flex;gap:32px;font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase}
-  .nav-links a:hover{color:var(--terra)}
-  .cta-btn{
-    background:var(--lime);border:2px solid var(--dark);
-    padding:12px 22px;font-weight:700;font-size:13px;
-    letter-spacing:1px;text-transform:uppercase;
-    box-shadow:var(--shadow-sm);
-    transition:transform .15s, box-shadow .15s;
-  }
-  .cta-btn:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--dark)}
+/* ============ HEADER ============ */
+header{
+  position:sticky;top:0;z-index:100;
+  background:var(--cream);
+  border-bottom:1px solid var(--dark);
+}
+.nav{position:relative;display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+.logo{display:flex;flex-direction:column;gap:2px}
+.logo-top{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;letter-spacing:.5px}
+.logo-sq{width:13px;height:13px;background:var(--lime);border:2px solid var(--dark)}
+.logo-sub{font-size:11px;font-weight:600;letter-spacing:1.6px;color:var(--teal-text)}
+.nav-links{
+  position:absolute;left:50%;transform:translateX(-50%);
+  display:flex;gap:34px;
+  font-size:13px;font-weight:600;letter-spacing:1.4px;
+}
+.nav-links a:hover{color:var(--red)}
+.btn-lime{
+  background:var(--lime);color:var(--dark);
+  border:2px solid var(--dark);
+  box-shadow:4px 4px 0 var(--dark);
+  font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.5px;
+  padding:12px 18px;
+}
 
-  /* HERO */
-  .hero{padding:80px 0 60px}
-  .hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center}
-  .hero h1{
-    font-size:44px;line-height:1.15;font-weight:600;
-    letter-spacing:-.5px;margin-bottom:28px;
-  }
-  .lang-badge{
-    display:inline-flex;align-items:center;gap:14px;
-    background:#f0e6d8;border-left:4px solid var(--terra);
-    padding:12px 18px;margin-bottom:40px;
-    font-size:14px;
-  }
-  .lang-badge .tag{
-    background:var(--dark);color:var(--lime);
-    padding:4px 10px;font-size:11px;font-weight:700;
-    letter-spacing:1px;
-  }
-  .hero-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
-  .hero-card{
-    background:#fff;border:1px solid rgba(0,0,0,.08);
-    padding:20px;
-  }
-  .hero-card .num{font-size:10px;color:var(--blue);letter-spacing:1.5px;font-weight:600;text-transform:uppercase}
-  .hero-card h3{font-size:18px;margin-top:6px;font-weight:600}
-  .hero-img{
-    background:var(--dark);padding:16px;
-    box-shadow:var(--shadow);
-    position:relative;
-  }
-  .hero-img img{border:2px solid var(--cream)}
-  .hero-img::after{
-    content:'✦';position:absolute;bottom:24px;right:24px;
-    color:var(--lime);font-size:20px;
-  }
+/* ============ HERO ============ */
+.hero{padding:64px 0 80px}
+.hero-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:48px;align-items:start}
+.hero h1{font-size:22px;font-weight:600;line-height:1.45;letter-spacing:.2px;margin-bottom:32px;max-width:560px}
+.lang-strip{
+  display:flex;align-items:center;gap:16px;
+  background:#f6e7dd;
+  border-left:4px solid var(--terra);
+  padding:12px 18px;
+  font-size:14px;
+  margin-bottom:48px;
+}
+.lang-strip .tag{
+  background:var(--dark);color:#fff;
+  font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:1px;
+  padding:5px 9px;white-space:nowrap;
+}
+.hero-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.hero-card{background:var(--paper);border:1px solid #d9d5c8;padding:18px 20px}
+.hero-card .num{font-size:10px;font-weight:600;letter-spacing:1.4px;color:var(--blue);text-transform:uppercase}
+.hero-card h3{font-size:18px;font-weight:600;margin-top:8px}
+.hero-img{position:relative;box-shadow:16px 16px 0 var(--teal)}
+.hero-img img{width:100%;height:330px;object-fit:cover}
+.sparkle{position:absolute;bottom:14px;right:16px;color:#fff;font-size:16px;text-shadow:0 0 6px rgba(0,0,0,.4)}
 
-  /* DIAGNOSIS */
-  .diagnosis{
-    background:var(--dark);color:var(--cream);
-    padding:100px 0;
-    background-image:
-      linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
-    background-size:40px 40px;
-  }
-  .section-tag{
-    display:inline-block;
-    background:var(--lime);color:var(--dark);
-    padding:6px 12px;font-size:11px;font-weight:700;
-    letter-spacing:1.5px;text-transform:uppercase;
-    border:1px solid var(--lime);
-    margin-bottom:28px;
-  }
-  .diagnosis h2{
-    font-size:52px;line-height:1.1;font-weight:600;
-    letter-spacing:-.5px;margin-bottom:24px;max-width:900px;
-  }
-  .diagnosis .lead{
-    font-size:18px;color:#c9d4cc;max-width:640px;margin-bottom:60px;
-  }
-  .stages{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .stage{
-    background:var(--dark-2);border:1px solid rgba(255,255,255,.1);
-    padding:32px 28px;
-  }
-  .stage-tag{
-    display:inline-block;padding:4px 10px;
-    font-size:11px;font-weight:700;letter-spacing:1px;
-    margin-bottom:20px;
-  }
-  .stage-tag.s1{background:var(--terra);color:#fff}
-  .stage-tag.s2{background:var(--terra);color:#fff}
-  .stage-tag.s3{background:var(--lime);color:var(--dark)}
-  .stage h3{font-size:24px;margin-bottom:14px;font-weight:600}
-  .stage p{font-size:15px;color:#c9d4cc;margin-bottom:22px;line-height:1.6}
-  .stage ul{list-style:none;border-top:1px dashed rgba(255,255,255,.15);padding-top:18px}
-  .stage li{
-    font-size:14px;color:var(--lime);
-    padding:6px 0;font-family:'JetBrains Mono',monospace;
-  }
-  .stage li::before{content:'→ ';opacity:.7}
+/* ============ DIAGNOSIS ============ */
+.diagnosis{
+  background-color:var(--dark);color:var(--cream);
+  padding:90px 0 100px;
+  background-image:
+    linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:44px 44px;
+}
+.tag-lime{
+  display:inline-block;background:var(--lime);color:var(--dark);
+  font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:1.2px;
+  padding:6px 10px;margin-bottom:26px;
+}
+.diagnosis h2{font-size:50px;font-weight:700;letter-spacing:-.5px;line-height:1.15;margin-bottom:22px}
+.diagnosis .lead{font-size:17px;color:var(--muted-dark);max-width:620px;margin-bottom:56px}
+.stages{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.stage{border:1px solid #3c4f43;padding:28px 26px}
+.stage-tag{
+  display:inline-block;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:1px;
+  padding:4px 9px;margin-bottom:22px;
+}
+.stage-tag.s1,.stage-tag.s2{background:var(--salmon);color:#3a2016}
+.stage-tag.s3{background:var(--lime);color:var(--dark)}
+.stage h3{font-size:24px;font-weight:600;margin-bottom:14px}
+.stage p{font-size:15px;color:var(--muted-dark);line-height:1.6;margin-bottom:24px}
+.stage ul{list-style:none;border-top:1px dashed #4a5a50;padding-top:16px}
+.stage li{
+  font-family:var(--mono);font-size:13px;color:var(--lime);
+  padding:5px 0;
+}
+.stage li::before{content:'→  '}
 
-  /* VALUES */
-  .values{padding:100px 0}
-  .values .section-tag{background:transparent;color:var(--blue);border:1px solid var(--blue)}
-  .values h2{font-size:48px;font-weight:600;letter-spacing:-.5px;margin-bottom:16px}
-  .values .lead{font-size:18px;color:#555;max-width:640px;margin-bottom:50px}
-  .val-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-  .val-card{
-    background:var(--cream-2);border:2px solid var(--dark);
-    padding:36px 32px;box-shadow:var(--shadow);
-  }
-  .val-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
-  .val-num{
-    background:var(--blue);color:#fff;
-    padding:4px 10px;font-size:11px;font-weight:700;letter-spacing:1px;
-  }
-  .val-type{font-size:12px;color:var(--terra);font-weight:700;letter-spacing:1.5px}
-  .val-card h3{font-size:26px;font-weight:600;margin-bottom:14px;letter-spacing:-.3px}
-  .val-card p{font-size:15px;color:#444;line-height:1.6}
+/* ============ VALUES ============ */
+.values{padding:100px 0 90px}
+.tag-steel{
+  display:inline-block;background:var(--steel);color:#fff;
+  border:1px solid var(--steel-line);
+  font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:1.2px;
+  padding:6px 10px;margin-bottom:26px;
+}
+.values h2{font-size:54px;font-weight:700;letter-spacing:-.5px;margin-bottom:18px}
+.values .lead{font-size:17px;color:var(--muted-light);max-width:620px;margin-bottom:52px}
+.val-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+.val-card{
+  background:var(--card-cream);
+  border:2px solid var(--dark);
+  box-shadow:8px 8px 0 var(--dark);
+  padding:30px 32px 34px;
+}
+.val-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:26px}
+.val-num{
+  background:var(--blue);color:#fff;
+  font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:1px;
+  padding:4px 9px;
+}
+.val-type{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:1px;color:var(--red)}
+.val-card h3{font-size:24px;font-weight:700;letter-spacing:-.2px;margin-bottom:14px}
+.val-card p{font-size:15px;color:var(--muted-light);line-height:1.6}
 
-  /* SHOWCASE */
-  .showcase{padding:40px 0 100px}
-  .show-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-  .show-card{
-    background:#fff;border:2px solid var(--dark);
-    box-shadow:var(--shadow);overflow:hidden;
-  }
-  .show-card img{width:100%;height:320px;object-fit:cover;border-bottom:2px solid var(--dark)}
-  .show-card .body{padding:28px}
-  .show-card h3{font-size:22px;font-weight:600;margin-bottom:10px}
-  .show-card p{font-size:15px;color:#555}
+/* ============ SHOWCASE ============ */
+.showcase{padding:70px 0 90px;border-top:1px solid var(--dark)}
+.show-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+.show-card{
+  background:var(--card-cream);
+  border:2px solid var(--dark);
+  box-shadow:10px 10px 0 var(--dark);
+  padding:10px 10px 0;
+}
+.show-card .img-wrap{position:relative}
+.show-card img{width:100%;height:320px;object-fit:cover}
+.show-card .body{padding:22px 16px 26px}
+.show-card h3{font-size:21px;font-weight:600;margin-bottom:10px}
+.show-card p{font-size:15px;color:var(--muted-light);line-height:1.6}
 
-  /* ABOUT */
-  .about{padding:100px 0;background:var(--cream)}
-  .about-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:center}
-  .about-img{
-    background:var(--dark);padding:14px;box-shadow:var(--shadow);
-    position:relative;
-  }
-  .about-img::before{
-    content:'';position:absolute;top:-14px;left:-14px;right:14px;bottom:14px;
-    background:var(--terra);z-index:-1;
-  }
-  .about-img img{border:2px solid var(--cream)}
-  .about .section-tag{background:transparent;color:var(--dark);border:1px solid var(--dark)}
-  .about h2{font-size:44px;font-weight:600;letter-spacing:-.5px;margin:20px 0 8px}
-  .about .role{color:var(--terra);font-weight:600;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:24px}
-  .about p{font-size:16px;color:#333;margin-bottom:18px;line-height:1.7}
-  .tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
-  .tag-chip{
-    background:var(--lime);border:2px solid var(--dark);
-    padding:8px 16px;font-size:13px;font-weight:600;
-    box-shadow:3px 3px 0 var(--dark);
-  }
+/* ============ ABOUT ============ */
+.about{padding:100px 0}
+.about-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:center}
+.about-img{
+  position:relative;background:var(--dark);padding:14px;
+  box-shadow:20px 20px 0 var(--terra);
+}
+.about-img img{width:100%;height:440px;object-fit:cover}
+.tag-line{
+  display:inline-block;
+  background:#e4ded2;border:1px solid var(--dark);
+  font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:1.2px;
+  padding:6px 10px;margin-bottom:22px;
+}
+.about h2{font-size:42px;font-weight:700;letter-spacing:-.4px;margin-bottom:10px}
+.about .role{font-size:14px;font-weight:700;letter-spacing:1.4px;color:var(--red);text-transform:uppercase;margin-bottom:26px}
+.about p{font-size:16px;color:#3a3a34;line-height:1.7;margin-bottom:18px}
+.chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;max-width:480px}
+.chip{
+  background:var(--lime);border:2px solid var(--dark);
+  box-shadow:4px 4px 0 var(--dark);
+  font-size:13px;font-weight:600;
+  padding:8px 14px;
+}
 
-  /* FOOTER */
-  footer{
-    background:var(--dark);color:var(--cream);
-    padding:70px 0 30px;
-  }
-  .foot-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;margin-bottom:40px}
-  .foot-grid h3{font-size:24px;margin-bottom:6px}
-  .foot-grid .by{color:var(--lime);font-size:14px;margin-bottom:20px}
-  .foot-grid p{color:#a8b4ad;font-size:14px;max-width:420px}
-  .foot-right{text-align:right}
-  .foot-right .langs{font-size:12px;font-weight:700;letter-spacing:1.5px;margin-bottom:14px}
-  .foot-right .langs span{margin-left:16px;cursor:pointer}
-  .foot-right p{color:#a8b4ad;font-size:13px}
-  .foot-bottom{
-    border-top:1px solid rgba(255,255,255,.1);
-    padding-top:24px;
-    display:flex;justify-content:space-between;
-    font-size:12px;color:#7a8880;
-  }
+/* ============ FOOTER ============ */
+footer{
+  background-color:var(--dark);color:var(--cream);
+  padding:70px 0 30px;
+  background-image:
+    linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:44px 44px;
+}
+.foot-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;margin-bottom:44px}
+.foot-grid h3{font-size:24px;font-weight:700;margin-bottom:8px}
+.foot-grid .by{color:var(--lime);font-size:15px;font-weight:600;margin-bottom:22px}
+.foot-grid p{font-size:15px;color:var(--muted-dark);max-width:440px;line-height:1.6}
+.foot-right{text-align:right}
+.foot-right .langs{font-size:12px;font-weight:700;letter-spacing:1.4px;margin-bottom:16px}
+.foot-right .langs span{margin-left:22px}
+.foot-right .langs span:first-child{margin-left:0}
+.foot-right p{font-size:13px;color:var(--muted-dark);margin-left:auto}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.15);padding-top:24px;font-size:12px;color:#7a8a7e}
 
-  @media (max-width:860px){
-    .hero-grid,.about-grid,.foot-grid{grid-template-columns:1fr}
-    .stages,.val-grid,.show-grid,.hero-cards{grid-template-columns:1fr}
-    .hero h1,.diagnosis h2,.values h2,.about h2{font-size:32px}
-    .nav-links{display:none}
-  }
+@media (max-width:900px){
+  .nav-links{display:none}
+  .hero-grid,.about-grid,.foot-grid{grid-template-columns:1fr}
+  .stages,.val-grid,.show-grid,.hero-cards{grid-template-columns:1fr}
+  .diagnosis h2,.values h2,.about h2{font-size:34px}
+  .foot-right{text-align:left}
+}
 </style>
 </head>
 <body>
 
 <header>
   <div class="container nav">
-    <div>
-      <div class="logo"><span class="logo-sq"></span>HORECA SYSTEMS</div>
-      <div class="logo-sub">by Yuliana Yaroshevich</div>
+    <div class="logo">
+      <div class="logo-top"><span class="logo-sq"></span>HORECA SYSTEMS</div>
+      <div class="logo-sub">BY YULIANA YAROSHEVICH</div>
     </div>
     <nav class="nav-links">
-      <a href="#overview">Overview</a>
-      <a href="#diagnosis">Diagnosis</a>
-      <a href="#values">Values</a>
-      <a href="#about">About</a>
+      <a href="#overview">OVERVIEW</a>
+      <a href="#diagnosis">DIAGNOSIS</a>
+      <a href="#values">VALUES</a>
+      <a href="#about">ABOUT</a>
     </nav>
-    <a href="#contact" class="cta-btn">[Your Link Here]</a>
+    <a href="#contact" class="btn-lime">[YOUR LINK HERE]</a>
   </div>
 </header>
 
@@ -250,27 +245,19 @@
   <div class="container hero-grid">
     <div>
       <h1>HoReCa Systems helps restaurants, cafés and hotels find where their operations break and fix it.</h1>
-      <div class="lang-badge">
-        <span class="tag mono">ES / EN</span>
+      <div class="lang-strip">
+        <span class="tag">ES / EN</span>
         <span>Direct consulting for venues in English &amp; Spanish.</span>
       </div>
       <div class="hero-cards">
-        <div class="hero-card">
-          <div class="num">01. Service Flow</div>
-          <h3>Diagnosed</h3>
-        </div>
-        <div class="hero-card">
-          <div class="num">02. Staff Routines</div>
-          <h3>Structured</h3>
-        </div>
-        <div class="hero-card">
-          <div class="num">03. Guest Experience</div>
-          <h3>Optimized</h3>
-        </div>
+        <div class="hero-card"><div class="num">01. Service Flow</div><h3>Diagnosed</h3></div>
+        <div class="hero-card"><div class="num">02. Staff Routines</div><h3>Structured</h3></div>
+        <div class="hero-card"><div class="num">03. Guest Experience</div><h3>Optimized</h3></div>
       </div>
     </div>
     <div class="hero-img">
-      <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800" alt="flow diagrams">
+      <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=900" alt="Operational flow diagrams on paper">
+      <span class="sparkle">✦</span>
     </div>
   </div>
 </section>
@@ -278,10 +265,9 @@
 <!-- DIAGNOSIS -->
 <section class="diagnosis" id="diagnosis">
   <div class="container">
-    <span class="section-tag">Operational Diagnosis</span>
+    <span class="tag-lime">OPERATIONAL DIAGNOSIS</span>
     <h2>Finding where operations break — and fixing them.</h2>
     <p class="lead">I diagnose service flow, staff routines and guest experience, then turn the chaos into clear systems: checklists, templates and digital tools.</p>
-
     <div class="stages">
       <div class="stage">
         <span class="stage-tag s1">STAGE 01</span>
@@ -320,40 +306,27 @@
 <!-- VALUES -->
 <section class="values" id="values">
   <div class="container">
-    <span class="section-tag">Core Values</span>
+    <span class="tag-steel">CORE VALUES</span>
     <h2>Built like a constructor.</h2>
     <p class="lead">Modular, direct and practical principles designed to swap out what doesn't work.</p>
-
     <div class="val-grid">
       <div class="val-card">
-        <div class="val-head">
-          <span class="val-num">VAL-01</span>
-          <span class="val-type">[PRINCIPLE]</span>
-        </div>
+        <div class="val-head"><span class="val-num">VAL-01</span><span class="val-type">[PRINCIPLE]</span></div>
         <h3>Clarity over chaos</h3>
         <p>Eliminating vague rules and guesswork in daily venue operations to replace noise with transparent visual instructions.</p>
       </div>
       <div class="val-card">
-        <div class="val-head">
-          <span class="val-num">VAL-02</span>
-          <span class="val-type">[PRACTICE]</span>
-        </div>
+        <div class="val-head"><span class="val-num">VAL-02</span><span class="val-type">[PRACTICE]</span></div>
         <h3>Practical, not theoretical</h3>
         <p>No heavy manuals or unreadable binders. Solutions are direct, actionable, and ready for immediate adoption on the floor.</p>
       </div>
       <div class="val-card">
-        <div class="val-head">
-          <span class="val-num">VAL-03</span>
-          <span class="val-type">[SYSTEM]</span>
-        </div>
+        <div class="val-head"><span class="val-num">VAL-03</span><span class="val-type">[SYSTEM]</span></div>
         <h3>Modular: build like a constructor</h3>
         <p>Every business system is constructed with interlocking pieces. Swap what doesn't work without re-inventing the entire venue.</p>
       </div>
       <div class="val-card">
-        <div class="val-head">
-          <span class="val-num">VAL-04</span>
-          <span class="val-type">[ADAPTATION]</span>
-        </div>
+        <div class="val-head"><span class="val-num">VAL-04</span><span class="val-type">[ADAPTATION]</span></div>
         <h3>Personal: every venue and guest is different</h3>
         <p>No cookie-cutter templates. Custom-engineered operational flows respect the exact identity of your space, team, and guests.</p>
       </div>
@@ -365,14 +338,20 @@
 <section class="showcase">
   <div class="container show-grid">
     <div class="show-card">
-      <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=800" alt="modular systems">
+      <div class="img-wrap">
+        <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=900" alt="Modular wooden puzzle blocks">
+        <span class="sparkle">✦</span>
+      </div>
       <div class="body">
         <h3>Modular Systems</h3>
         <p>Flexible components engineered to fit into existing restaurant, café, and hotel workflows seamlessly.</p>
       </div>
     </div>
     <div class="show-card">
-      <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800" alt="guest experience">
+      <div class="img-wrap">
+        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900" alt="Brass hotel service bell">
+        <span class="sparkle">✦</span>
+      </div>
       <div class="body">
         <h3>Guest Experience Standards</h3>
         <p>Elevating tangible touchpoints across hotel desks, café counters, and dining rooms through clear routines.</p>
@@ -385,19 +364,20 @@
 <section class="about" id="about">
   <div class="container about-grid">
     <div class="about-img">
-      <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800" alt="Yuliana Yaroshevich">
+      <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900" alt="Sketching operational flow diagrams">
+      <span class="sparkle">✦</span>
     </div>
     <div>
-      <span class="section-tag">Consultant Profile</span>
+      <span class="tag-line">CONSULTANT PROFILE</span>
       <h2>Yuliana Yaroshevich</h2>
-      <div class="role">Founder &amp; Hospitality Operations Specialist</div>
+      <div class="role">FOUNDER &amp; HOSPITALITY OPERATIONS SPECIALIST</div>
       <p>My background spans hotel operations, restaurant management and service consulting. I help venues step away from constant fire-fighting by engineering clear, reliable operational frameworks.</p>
       <p>Whether managing a boutique hotel front desk, a fast-paced cafe counter, or a full-service dining room, I build structures that allow team members to execute with confidence and autonomy.</p>
-      <div class="tags">
-        <span class="tag-chip">Hotel Operations</span>
-        <span class="tag-chip">Restaurant Management</span>
-        <span class="tag-chip">Service Consulting</span>
-        <span class="tag-chip">Bilingual (ES/EN)</span>
+      <div class="chips">
+        <span class="chip">Hotel Operations</span>
+        <span class="chip">Restaurant Management</span>
+        <span class="chip">Service Consulting</span>
+        <span class="chip">Bilingual (ES/EN)</span>
       </div>
     </div>
   </div>
@@ -417,10 +397,7 @@
         <p>Clear, practical, modular consulting.</p>
       </div>
     </div>
-    <div class="foot-bottom">
-      <span>© HoReCa Systems (by Yuliana Yaroshevich). All rights reserved.</span>
-      <span>Report legal issue</span>
-    </div>
+    <div class="foot-bottom">© HoReCa Systems (by Yuliana Yaroshevich). All rights reserved.</div>
   </div>
 </footer>
 
